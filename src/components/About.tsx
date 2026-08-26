@@ -1,4 +1,5 @@
-import { consultant, timeline } from "@/lib/content";
+import { consultant, timeline, book } from "@/lib/content";
+import { PhotoFrame } from "./Media";
 
 export default function About() {
   return (
@@ -38,8 +39,25 @@ export default function About() {
             </ul>
           </div>
 
-          {/* timeline */}
+          {/* timeline + 저서 */}
           <div>
+            {/* 저서 — 권위 증거 */}
+            <figure className="mb-12 flex items-center gap-5 border-b border-line pb-10">
+              <PhotoFrame
+                src={book.image}
+                alt={book.title}
+                hint={book.hint}
+                className="aspect-[3/4] w-28 shrink-0 rounded-none border-ink/15"
+              />
+              <figcaption>
+                <p className="eyebrow mb-2">저서</p>
+                <p className="text-[0.95rem] font-semibold leading-snug text-ink">
+                  {book.title}
+                </p>
+                <p className="tick mt-1.5">{book.author}</p>
+              </figcaption>
+            </figure>
+
             <p className="eyebrow mb-7">지나온 길</p>
             <ol className="space-y-6">
               {timeline.map((t) => (

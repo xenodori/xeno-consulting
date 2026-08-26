@@ -5,8 +5,9 @@ import {
   seatsRemaining,
   valueStack,
   valueTotal,
-  bonus,
+  bonuses,
 } from "@/lib/content";
+import { PhotoFrame } from "./Media";
 
 export default function Pricing() {
   return (
@@ -72,17 +73,29 @@ export default function Pricing() {
             </dl>
 
             {/* 보너스 */}
-            <div className="mt-6 border border-amber/50 bg-amber/15 p-4">
-              <div className="flex items-baseline justify-between gap-3">
-                <span className="text-sm font-semibold text-amber">
-                  ＋ 보너스 · {bonus.title}
-                </span>
-                <span className="tick shrink-0 text-paper/60">
-                  <span className="line-through">{bonus.retail}</span>{" "}
-                  <span className="text-amber">{bonus.free}</span>
-                </span>
-              </div>
-              <p className="mt-2 text-[0.85rem] leading-relaxed text-paper/70">{bonus.desc}</p>
+            <div className="mt-6 space-y-3">
+              {bonuses.map((b) => (
+                <div key={b.title} className="border border-amber/50 bg-amber/15 p-4">
+                  <div className="flex items-baseline justify-between gap-3">
+                    <span className="text-sm font-semibold text-amber">
+                      ＋ 보너스 · {b.title}
+                    </span>
+                    <span className="tick shrink-0 text-paper/60">
+                      <span className="line-through">{b.retail}</span>{" "}
+                      <span className="text-amber">{b.free}</span>
+                    </span>
+                  </div>
+                  {b.image && (
+                    <PhotoFrame
+                      src={b.image}
+                      alt={`${b.title} 이미지`}
+                      hint="강의 패키지 이미지"
+                      className="mt-3 aspect-[16/9] w-full rounded-none border-paper/15"
+                    />
+                  )}
+                  <p className="mt-2 text-[0.85rem] leading-relaxed text-paper/70">{b.desc}</p>
+                </div>
+              ))}
             </div>
 
             <a

@@ -56,8 +56,8 @@ export default function ConsultForm() {
         </span>
         <h3 className="display text-2xl">지원서가 도착했어요</h3>
         <p className="text-ink-soft">
-          영업일 기준 하루 안에 적어주신 이메일로 무료 사전 상담 일정을 보내드릴게요.
-          상담에서 서로 맞는지 확인한 뒤, 매달 세 명 안에서 함께 시작합니다.
+          영업일 기준 하루 안에 지원서를 심사해, 선정 결과를 적어주신 이메일로
+          안내드립니다. 매달 세 명만 선발합니다.
         </p>
         <button
           type="button"

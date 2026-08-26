@@ -10,7 +10,7 @@ export default function Guarantee() {
           <p className="mt-6 text-lg leading-relaxed text-paper/75">{guarantee.lead}</p>
         </div>
 
-        <div className="mt-14 grid gap-px overflow-hidden border border-paper/15 bg-paper/15 md:grid-cols-3">
+        <div className="mt-14 grid gap-px overflow-hidden border border-paper/15 bg-paper/15 md:grid-cols-2">
           {guarantee.points.map((p, i) => (
             <div key={p.title} className="flex flex-col gap-4 bg-ink p-7">
               <span className="display text-3xl text-amber">{String(i + 1).padStart(2, "0")}</span>
