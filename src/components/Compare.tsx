@@ -24,7 +24,7 @@ export default async function Compare() {
                 <th className="py-4 pr-4 align-bottom">
                   <span className="tick">일반 VOD / 단체 코칭</span>
                 </th>
-                <th className="rounded-t-xl bg-ink py-4 px-5 align-bottom text-paper">
+                <th className="border-x-2 border-t-2 border-amber bg-ink py-4 px-5 align-bottom text-paper">
                   <span className="eyebrow text-amber">1:1 VIP 딥다이브</span>
                 </th>
               </tr>
@@ -39,8 +39,8 @@ export default async function Compare() {
                     {r.vod}
                   </td>
                   <td
-                    className={`bg-ink/95 px-5 py-5 text-sm leading-relaxed text-paper ${
-                      i === compareRows.length - 1 ? "rounded-b-xl" : ""
+                    className={`border-x-2 border-amber bg-ink px-5 py-5 text-sm leading-relaxed text-paper ${
+                      i === compareRows.length - 1 ? "border-b-2" : ""
                     }`}
                   >
                     {r.vip}

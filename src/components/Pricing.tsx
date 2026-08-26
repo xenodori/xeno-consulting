@@ -57,7 +57,7 @@ export default async function Pricing() {
 
         <div className="mt-6 grid gap-6 lg:grid-cols-[1fr_1fr]">
           {/* 가격 카드 */}
-          <div className="flex flex-col rounded-none border border-ink bg-ink p-8 text-paper">
+          <div className="flex flex-col rounded-none border border-ink border-t-4 border-t-amber bg-ink p-8 text-paper">
             <span className="w-fit bg-amber px-3 py-1 text-xs font-semibold tracking-wide text-paper">
               {program.badge}
             </span>
