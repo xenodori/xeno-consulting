@@ -242,7 +242,7 @@ export const bonuses = [
     desc: "지금도 118만 원에 판매 중인 VOD 패키지(정가 307만 원)를, 클리닉 참여자에게는 무료로 드립니다. 세션 전에 미리 보면 진도가 훨씬 빨라져요.",
     retail: "정가 307만원",
     free: "무료 제공",
-    image: "/vod-package.jpg",
+    image: "",
   },
   {
     title: "제노랩 사이트 프로 6개월 이용권",
