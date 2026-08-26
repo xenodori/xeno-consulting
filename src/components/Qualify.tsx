@@ -1,6 +1,7 @@
-import { qualify } from "@/lib/content";
+import { getContent } from "@/lib/site-content";
 
-export default function Qualify() {
+export default async function Qualify() {
+  const { qualify } = await getContent();
   return (
     <section id="qualify" className="border-b border-line bg-paper-dim/40 py-20 sm:py-28">
       <div className="mx-auto max-w-5xl px-5 sm:px-8">

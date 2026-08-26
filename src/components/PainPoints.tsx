@@ -1,6 +1,7 @@
-import { pain } from "@/lib/content";
+import { getContent } from "@/lib/site-content";
 
-export default function PainPoints() {
+export default async function PainPoints() {
+  const { pain } = await getContent();
   return (
     <section id="pain" className="border-b border-line bg-ink py-20 text-paper sm:py-28">
       <div className="mx-auto max-w-4xl px-5 sm:px-8">

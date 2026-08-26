@@ -1,7 +1,8 @@
-import { cases, casesClaim } from "@/lib/content";
+import { getContent } from "@/lib/site-content";
 import { PhotoFrame } from "./Media";
 
-export default function Cases() {
+export default async function Cases() {
+  const { cases, casesClaim } = await getContent();
   return (
     <section id="cases" className="border-b border-line bg-paper-dim/40 py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-5 sm:px-8">

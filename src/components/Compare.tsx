@@ -1,6 +1,7 @@
-import { compareRows } from "@/lib/content";
+import { getContent } from "@/lib/site-content";
 
-export default function Compare() {
+export default async function Compare() {
+  const { compareRows } = await getContent();
   return (
     <section id="compare" className="border-b border-line py-20 sm:py-28">
       <div className="mx-auto max-w-5xl px-5 sm:px-8">

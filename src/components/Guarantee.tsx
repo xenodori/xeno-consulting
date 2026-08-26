@@ -1,6 +1,7 @@
-import { guarantee } from "@/lib/content";
+import { getContent } from "@/lib/site-content";
 
-export default function Guarantee() {
+export default async function Guarantee() {
+  const { guarantee } = await getContent();
   return (
     <section id="guarantee" className="border-b border-line bg-ink py-20 text-paper sm:py-28">
       <div className="mx-auto max-w-5xl px-5 sm:px-8">

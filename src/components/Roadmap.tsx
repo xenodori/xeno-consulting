@@ -1,6 +1,7 @@
-import { roadmap } from "@/lib/content";
+import { getContent } from "@/lib/site-content";
 
-export default function Roadmap() {
+export default async function Roadmap() {
+  const { roadmap } = await getContent();
   return (
     <section id="roadmap" className="border-b border-line bg-paper-dim/40 py-20 sm:py-28">
       <div className="mx-auto max-w-4xl px-5 sm:px-8">

@@ -1,7 +1,8 @@
-import { consultant, timeline, book } from "@/lib/content";
+import { getContent } from "@/lib/site-content";
 import { PhotoFrame } from "./Media";
 
-export default function About() {
+export default async function About() {
+  const { consultant, timeline, book } = await getContent();
   return (
     <section id="about" className="border-b border-line py-20 sm:py-28">
       <div className="mx-auto max-w-5xl px-5 sm:px-8">

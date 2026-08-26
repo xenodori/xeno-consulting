@@ -306,6 +306,32 @@ export const faqs: { q: string; a: string }[] = [
   },
 ];
 
+/** 관리자 페이지에서 편집 가능한 전체 콘텐츠(기본값). DB에 저장된 값이 있으면 이 위에 덮어씀. */
+export const defaults = {
+  program,
+  pain,
+  consultant,
+  book,
+  timeline,
+  cases,
+  casesClaim,
+  compareRows,
+  roadmap,
+  deliverables,
+  qualify,
+  process,
+  roi,
+  seatsRemaining,
+  priceNotice,
+  valueStack,
+  valueTotal,
+  bonuses,
+  guarantee,
+  faqs,
+};
+
+export type SiteContent = typeof defaults;
+
 /** 히어로 궤적 플롯 좌표 (0~100 정규화, y는 위로 갈수록 큼) */
 export const trajectory: [number, number][] = [
   [2, 8],

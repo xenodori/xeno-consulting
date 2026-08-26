@@ -1,7 +1,8 @@
 import { PhotoFrame } from "./Media";
-import { program, consultant } from "@/lib/content";
+import { getContent } from "@/lib/site-content";
 
-export default function Hero() {
+export default async function Hero() {
+  const { program, consultant } = await getContent();
   return (
     <section id="top" className="border-b border-ink/15">
       <div className="mx-auto max-w-6xl px-5 sm:px-8">

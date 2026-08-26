@@ -1,16 +1,17 @@
-import {
-  program,
-  process,
-  roi,
-  seatsRemaining,
-  valueStack,
-  valueTotal,
-  bonuses,
-  priceNotice,
-} from "@/lib/content";
+import { getContent } from "@/lib/site-content";
 import { PhotoFrame } from "./Media";
 
-export default function Pricing() {
+export default async function Pricing() {
+  const {
+    program,
+    process,
+    roi,
+    seatsRemaining,
+    valueStack,
+    valueTotal,
+    bonuses,
+    priceNotice,
+  } = await getContent();
   return (
     <section id="pricing" className="border-b border-line py-20 sm:py-28">
       <div className="mx-auto max-w-5xl px-5 sm:px-8">

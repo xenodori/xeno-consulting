@@ -1,6 +1,7 @@
-import { faqs } from "@/lib/content";
+import { getContent } from "@/lib/site-content";
 
-export default function Faq() {
+export default async function Faq() {
+  const { faqs } = await getContent();
   return (
     <section id="faq" className="border-b border-line py-20 sm:py-28">
       <div className="mx-auto max-w-3xl px-5 sm:px-8">

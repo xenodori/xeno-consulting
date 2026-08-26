@@ -14,6 +14,9 @@ import Apply from "@/components/Apply";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
 
+// 관리자 편집 내용이 바로 반영되도록 매 요청 시 최신 콘텐츠를 읽는다.
+export const dynamic = "force-dynamic";
+
 export default function Home() {
   return (
     <>
