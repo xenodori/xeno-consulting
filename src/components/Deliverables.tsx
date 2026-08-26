@@ -5,9 +5,9 @@ export default function Deliverables() {
     <section id="deliverables" className="border-b border-line py-20 sm:py-28">
       <div className="mx-auto max-w-5xl px-5 sm:px-8">
         <div className="max-w-2xl">
-          <p className="eyebrow mb-4">제공 혜택 · 독점 에셋</p>
+          <p className="eyebrow mb-4">제공 항목</p>
           <h2 className="display text-3xl sm:text-4xl md:text-5xl">
-            세션이 끝나도 남는 것들
+            이 클리닉에 포함된 전부
           </h2>
         </div>
 

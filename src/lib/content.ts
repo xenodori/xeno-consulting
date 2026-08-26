@@ -195,7 +195,6 @@ export const deliverables: string[] = [
   "30일 카카오톡 전용 채널 밀착 피드백",
   "전 강의 VOD 패키지 평생 시청권 (정가 307만원 · 무료)",
   "제노랩 사이트 프로 6개월 이용권 (118,800원 · 무료)",
-  "수동 소싱 자동 마진 계산 시트 & 결핍 키워드 발굴 체크리스트",
 ];
 
 /** 7. 지원 자격 (Anti-Persona) */
@@ -231,9 +230,8 @@ export const valueStack: { item: string; worth: string }[] = [
   { item: "30일 카카오톡 밀착 피드백", worth: "200만원" },
   { item: "전 강의 VOD 패키지 (정가 307만원 · 현재 118만원 판매)", worth: "118만원" },
   { item: "제노랩 사이트 프로 6개월 이용권", worth: "118,800원" },
-  { item: "수동 소싱 마진 계산 시트 & 결핍 키워드 체크리스트", worth: "30만원" },
 ];
-export const valueTotal = "660만원";
+export const valueTotal = "630만원";
 
 /** 보너스 — 컨설팅 참여자 전원 무료 제공 */
 export const bonuses = [
