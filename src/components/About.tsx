@@ -1,5 +1,4 @@
 import { consultant, timeline } from "@/lib/content";
-import { VideoFrame } from "./Media";
 
 export default function About() {
   return (
@@ -61,15 +60,6 @@ export default function About() {
                 </li>
               ))}
             </ol>
-
-            <figure className="mt-10">
-              <figcaption className="tick mb-3">1분 인사 영상</figcaption>
-              <VideoFrame
-                src={consultant.introVideo}
-                title={`${consultant.name} 인사 영상`}
-                className="aspect-video w-full rounded-none"
-              />
-            </figure>
           </div>
         </div>
       </div>
