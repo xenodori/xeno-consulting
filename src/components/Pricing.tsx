@@ -78,32 +78,6 @@ export default async function Pricing() {
               <Line k="진행 방식" v={program.format} />
             </dl>
 
-            {/* 보너스 */}
-            <div className="mt-6 space-y-3">
-              {bonuses.map((b) => (
-                <div key={b.title} className="border border-amber/50 bg-amber/15 p-4">
-                  <div className="flex items-baseline justify-between gap-3">
-                    <span className="text-sm font-semibold text-amber">
-                      ＋ 보너스 · {b.title}
-                    </span>
-                    <span className="tick shrink-0 text-paper/60">
-                      <span className="line-through">{b.retail}</span>{" "}
-                      <span className="text-amber">{b.free}</span>
-                    </span>
-                  </div>
-                  {b.image && (
-                    <PhotoFrame
-                      src={b.image}
-                      alt={`${b.title} 이미지`}
-                      hint="강의 패키지 이미지"
-                      className="mt-3 aspect-[16/9] w-full rounded-none border-paper/15"
-                    />
-                  )}
-                  <p className="mt-2 text-[0.85rem] leading-relaxed text-paper/70">{b.desc}</p>
-                </div>
-              ))}
-            </div>
-
             <a
               href="#apply"
               className="mt-8 inline-flex items-center justify-center bg-amber px-6 py-3.5 font-medium text-paper transition-colors hover:bg-paper hover:text-ink"
@@ -112,14 +86,14 @@ export default async function Pricing() {
             </a>
           </div>
 
-          {/* ROI + 절차 */}
+          {/* ROI + 절차 + 보너스 */}
           <div className="flex flex-col gap-6">
             <div className="rounded-none border border-amber/40 bg-amber/10 p-7">
               <p className="mb-2 font-semibold text-amber-deep">ROI 관점으로 생각해보세요</p>
               <p className="text-[0.98rem] leading-relaxed text-ink">{roi}</p>
             </div>
 
-            <ol className="flex flex-1 flex-col gap-4 rounded-none border border-line bg-paper p-7">
+            <ol className="flex flex-col gap-4 rounded-none border border-line bg-paper p-7">
               <p className="tick">지원 프로세스</p>
               {process.map((p) => (
                 <li key={p.step} className="flex gap-4">
@@ -128,6 +102,32 @@ export default async function Pricing() {
                 </li>
               ))}
             </ol>
+
+            {/* 보너스 */}
+            <div className="space-y-3">
+              {bonuses.map((b) => (
+                <div key={b.title} className="border border-amber/50 bg-amber/10 p-5">
+                  <div className="flex items-baseline justify-between gap-3">
+                    <span className="text-sm font-semibold text-amber-deep">
+                      ＋ 보너스 · {b.title}
+                    </span>
+                    <span className="tick shrink-0 text-ink-soft">
+                      <span className="line-through">{b.retail}</span>{" "}
+                      <span className="text-amber-deep">{b.free}</span>
+                    </span>
+                  </div>
+                  {b.image && (
+                    <PhotoFrame
+                      src={b.image}
+                      alt={`${b.title} 이미지`}
+                      hint="강의 패키지 이미지"
+                      className="mt-3 aspect-[16/9] w-full rounded-none"
+                    />
+                  )}
+                  <p className="mt-2 text-[0.85rem] leading-relaxed text-ink-soft">{b.desc}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
