@@ -12,10 +12,12 @@ import Pricing from "@/components/Pricing";
 import Faq from "@/components/Faq";
 import Apply from "@/components/Apply";
 import Footer from "@/components/Footer";
+import ScrollReveal from "@/components/ScrollReveal";
 
 export default function Home() {
   return (
     <>
+      <ScrollReveal />
       <Nav />
       <main>
         <Hero />

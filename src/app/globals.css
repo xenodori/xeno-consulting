@@ -49,6 +49,14 @@ body {
   color: var(--color-ink);
   font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
+  /* 한글 줄바꿈 품질 — 단어 중간에서 끊기지 않게 */
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+/* 한글 헤드라인은 세로 여백이 필요 — 너무 붙지 않게 */
+.display {
+  word-break: keep-all;
 }
 
 ::selection {
@@ -111,10 +119,30 @@ body {
 }
 
 @keyframes rise {
-  from { opacity: 0; transform: translateY(16px); }
-  to { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; transform: translateY(16px); filter: blur(3px); }
+  to { opacity: 1; transform: translateY(0); filter: blur(0); }
 }
-.reveal { animation: rise 0.7s cubic-bezier(0.22, 0.61, 0.36, 1) both; }
+/* supanova 모션 시그니처 */
+.reveal { animation: rise 0.8s cubic-bezier(0.16, 1, 0.3, 1) both; }
+
+/* 스크롤 진입 애니메이션 — JS가 있을 때만 적용(진행형 개선) */
+.reveal-pending {
+  opacity: 0;
+  transform: translateY(1.6rem);
+  filter: blur(3px);
+  transition:
+    opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal-pending.in-view {
+  opacity: 1;
+  transform: none;
+  filter: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal-pending { opacity: 1; transform: none; filter: none; transition: none; }
+}
 
 /* keep trajectory helper for hero (subtle) */
 .trajectory {
