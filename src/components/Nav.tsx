@@ -11,7 +11,6 @@ export default function Nav() {
       <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 sm:px-8">
         <a href="/#top" className="flex items-baseline gap-2">
           <span className="display text-xl tracking-tight">제노의 1:1 컨설팅</span>
-          <span className="tick hidden sm:inline">XENO</span>
         </a>
 
         <nav className="flex items-center gap-1 sm:gap-2">

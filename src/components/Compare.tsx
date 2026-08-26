@@ -9,7 +9,9 @@ export default function Compare() {
           <h2 className="display text-3xl sm:text-4xl md:text-5xl">
             늘어지는 8주짜리 강의는 그만.
             <br />
-            6시간 동안 완전히 수술합니다
+            <span className="text-amber">6시간</span> 만에 당신의 스토어를
+            <br />
+            완전히 뜯어고칩니다
           </h2>
         </div>
 

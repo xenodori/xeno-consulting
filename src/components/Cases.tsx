@@ -1,4 +1,4 @@
-import { cases } from "@/lib/content";
+import { cases, casesClaim } from "@/lib/content";
 import { PhotoFrame } from "./Media";
 
 export default function Cases() {
@@ -12,6 +12,7 @@ export default function Cases() {
             <br />
             셀러들의 실제 데이터
           </h2>
+          <p className="mt-6 text-lg font-semibold text-amber-deep">{casesClaim}</p>
         </div>
 
         <div className="mt-14 flex flex-col gap-8">

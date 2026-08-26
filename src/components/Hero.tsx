@@ -8,13 +8,13 @@ export default function Hero() {
         {/* masthead line */}
         <div className="flex items-center justify-between border-b border-line py-3 text-ink-soft">
           <span className="tick">제노의 1:1 컨설팅</span>
-          <span className="tick uppercase">{program.badge} · Seoul</span>
+          <span className="tick uppercase">{program.badge}</span>
         </div>
 
         <div className="grid gap-10 py-12 sm:py-16 lg:grid-cols-[1.05fr_0.95fr] lg:gap-14">
           {/* headline column */}
           <div className="reveal flex flex-col justify-center">
-            <p className="eyebrow mb-8">이커머스 스토어 클리닉 · No.01</p>
+            <p className="eyebrow mb-8">이커머스 스토어 클리닉</p>
 
             <h1 className="display text-[2.7rem] leading-[1.04] sm:text-6xl lg:text-[4.1rem]">
               이커머스 스토어
@@ -27,7 +27,7 @@ export default function Hero() {
 
             <div className="my-8 h-px w-16 bg-ink" />
 
-            <p className="max-w-md text-lg leading-relaxed text-ink-soft">
+            <p className="max-w-md text-lg font-medium leading-relaxed text-ink">
               {program.promise}
             </p>
 

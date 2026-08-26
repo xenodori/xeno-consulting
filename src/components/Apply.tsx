@@ -12,15 +12,15 @@ export default function Apply() {
             단 한 번의 정밀 처방
           </h2>
           <p className="mt-6 text-lg leading-relaxed text-ink-soft">
-            지원서를 보내주시면 24시간 이내 스토어 현황과 개선 가능성을
-            내부 심사합니다. 선발되면 개별 안내 후 1차 세션 일정을 잡아요.
+            지원서를 보내주시면 48시간 이내에 스토어 현황과 개선 가능성을
+            보고 선별해 연락드립니다. 선정되면 1차 세션 일정을 잡아요.
             매달 세 명만 함께합니다.
           </p>
 
           <ul className="mt-10 flex flex-col gap-4 border-t border-line pt-8">
             {[
               ["월 3명", "3명 마감 시 대기 등록으로 전환"],
-              ["24시간 내", "지원 후 내부 심사 완료"],
+              ["48시간 내", "지원 후 선별해 연락"],
               ["결제는 선발 후", "심사를 통과한 분만 안내드려요"],
             ].map(([k, v]) => (
               <li key={k} className="flex items-baseline gap-4">

@@ -25,7 +25,7 @@ export default function Footer() {
       <div className="border-t border-paper/10">
         <div className="mx-auto flex max-w-6xl flex-col gap-2 px-5 py-5 sm:flex-row sm:justify-between sm:px-8">
           <span className="tick text-paper/40">© {new Date().getFullYear()} 제노 · XENO Consulting</span>
-          <span className="tick text-paper/40">Seoul · 온라인/오프라인 세션</span>
+          <span className="tick text-paper/40">100% 온라인 세션</span>
         </div>
       </div>
     </footer>

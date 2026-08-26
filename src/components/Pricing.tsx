@@ -6,6 +6,7 @@ import {
   valueStack,
   valueTotal,
   bonuses,
+  priceNotice,
 } from "@/lib/content";
 import { PhotoFrame } from "./Media";
 
@@ -66,6 +67,10 @@ export default function Pricing() {
               <span className="text-lg text-paper/70">만원</span>
               <span className="tick self-end pb-1 text-paper/50">{program.priceNote}</span>
             </div>
+
+            <p className="mt-4 border-l-2 border-amber pl-3 text-[0.85rem] font-medium leading-relaxed text-amber">
+              {priceNotice}
+            </p>
 
             <dl className="mt-7 space-y-3 border-t border-paper/15 pt-6 text-sm">
               <Line k="모집 인원" v={`${program.seats} · 마감 시 대기 등록`} />

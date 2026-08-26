@@ -11,11 +11,11 @@ export default function Guarantee() {
         </div>
 
         <div className="mt-14 grid gap-px overflow-hidden border border-paper/15 bg-paper/15 md:grid-cols-2">
-          {guarantee.points.map((p, i) => (
-            <div key={p.title} className="flex flex-col gap-4 bg-ink p-7">
-              <span className="display text-3xl text-amber">{String(i + 1).padStart(2, "0")}</span>
+          {guarantee.points.map((p) => (
+            <div key={p.title} className="flex flex-col gap-3 bg-ink p-7">
+              <span aria-hidden className="h-1 w-8 bg-amber" />
               <h3 className="text-lg font-semibold text-paper">{p.title}</h3>
-              <p className="text-[0.95rem] leading-relaxed text-paper/70">{p.desc}</p>
+              <p className="text-[0.95rem] leading-relaxed text-paper/75">{p.desc}</p>
             </div>
           ))}
         </div>

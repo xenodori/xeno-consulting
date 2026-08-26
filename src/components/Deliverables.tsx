@@ -12,12 +12,10 @@ export default function Deliverables() {
         </div>
 
         <div className="mt-12 grid gap-px overflow-hidden rounded-none border border-line bg-line sm:grid-cols-2">
-          {deliverables.map((d, i) => (
-            <div key={d} className="flex gap-5 bg-paper p-7">
-              <span className="display shrink-0 text-3xl text-amber-deep">
-                {String(i + 1).padStart(2, "0")}
-              </span>
-              <p className="text-[0.98rem] leading-relaxed text-ink">{d}</p>
+          {deliverables.map((d) => (
+            <div key={d} className="flex items-start gap-4 bg-paper p-7">
+              <span aria-hidden className="mt-2.5 h-2 w-2 shrink-0 bg-amber" />
+              <p className="text-[0.98rem] font-medium leading-relaxed text-ink">{d}</p>
             </div>
           ))}
         </div>
