@@ -5,6 +5,7 @@ import {
   seatsRemaining,
   valueStack,
   valueTotal,
+  bonus,
 } from "@/lib/content";
 
 export default function Pricing() {
@@ -69,6 +70,20 @@ export default function Pricing() {
               <Line k="모집 인원" v={`${program.seats} · 마감 시 대기 등록`} />
               <Line k="진행 방식" v={program.format} />
             </dl>
+
+            {/* 보너스 */}
+            <div className="mt-6 border border-amber/50 bg-amber/15 p-4">
+              <div className="flex items-baseline justify-between gap-3">
+                <span className="text-sm font-semibold text-amber">
+                  ＋ 보너스 · {bonus.title}
+                </span>
+                <span className="tick shrink-0 text-paper/60">
+                  <span className="line-through">{bonus.regular}</span>{" "}
+                  <span className="text-amber">{bonus.free}</span>
+                </span>
+              </div>
+              <p className="mt-2 text-[0.85rem] leading-relaxed text-paper/70">{bonus.desc}</p>
+            </div>
 
             <a
               href="#apply"

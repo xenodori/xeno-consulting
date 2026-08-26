@@ -183,6 +183,7 @@ export const roadmap: Step[] = [
 
 /** 6. 제공 혜택 및 독점 에셋 */
 export const deliverables: string[] = [
+  "심화강의 VOD 평생 시청권 (정가 119만원 · 참여자 무료 제공)",
   "1:1 비공개 Zoom 6시간 세션 풀 녹화본 (언제든 무제한 복기)",
   "현역 셀러 전용 Notion 스케일업 대시보드 복제 권한",
   "수동 소싱 자동 마진 계산 시트 & 결핍 키워드 발굴 체크리스트",
@@ -220,11 +221,20 @@ export const seatsRemaining = "이번 달 3자리 중 2자리 남음";
 export const valueStack: { item: string; worth: string }[] = [
   { item: "1:1 화상 6시간 밀착 수술 (진단 · 소싱 · 상세)", worth: "200만원" },
   { item: "30일 실행 밀착 피드백 (주 1회)", worth: "100만원" },
+  { item: "심화강의 VOD 평생 시청권 (정가 119만원)", worth: "119만원" },
   { item: "Notion 스케일업 대시보드 복제 권한", worth: "50만원" },
   { item: "수동 소싱 마진 계산 시트 & 결핍 키워드 체크리스트", worth: "30만원" },
   { item: "6시간 세션 풀 녹화본 (무제한 복기)", worth: "30만원" },
 ];
-export const valueTotal = "410만원";
+export const valueTotal = "529만원";
+
+/** 보너스 — 컨설팅 참여자 전원 무료 제공 */
+export const bonus = {
+  title: "심화강의 VOD 평생 시청권",
+  desc: "따로 사면 정가 119만원(현재 65.8만원 판매) 강의를, 클리닉 참여자에게는 무료로 드립니다. 세션 전에 미리 보면 진도가 훨씬 빨라져요.",
+  regular: "119만원",
+  free: "무료 제공",
+};
 
 /** 리스크 리버설 — 실제 운영 정책에 맞게 확정하세요 */
 export const guarantee = {
