@@ -44,7 +44,7 @@ export default function Cases() {
 
               {/* 증거 이미지 자리 */}
               <PhotoFrame
-                src=""
+                src={c.image ?? ""}
                 alt={`${c.tag} 증빙 이미지`}
                 hint={c.proofHint}
                 className="min-h-[220px] w-full lg:h-full"

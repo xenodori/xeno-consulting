@@ -7,7 +7,9 @@ import Compare from "@/components/Compare";
 import Roadmap from "@/components/Roadmap";
 import Deliverables from "@/components/Deliverables";
 import Qualify from "@/components/Qualify";
+import Guarantee from "@/components/Guarantee";
 import Pricing from "@/components/Pricing";
+import Faq from "@/components/Faq";
 import Apply from "@/components/Apply";
 import Footer from "@/components/Footer";
 
@@ -24,7 +26,9 @@ export default function Home() {
         <Roadmap />
         <Deliverables />
         <Qualify />
+        <Guarantee />
         <Pricing />
+        <Faq />
         <Apply />
       </main>
       <Footer />
