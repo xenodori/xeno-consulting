@@ -78,7 +78,7 @@ export default function Pricing() {
                   ＋ 보너스 · {bonus.title}
                 </span>
                 <span className="tick shrink-0 text-paper/60">
-                  <span className="line-through">{bonus.regular}</span>{" "}
+                  <span className="line-through">{bonus.retail}</span>{" "}
                   <span className="text-amber">{bonus.free}</span>
                 </span>
               </div>
