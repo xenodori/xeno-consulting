@@ -92,7 +92,7 @@ export default async function Pricing() {
           {/* ROI + 절차 + 보너스 */}
           <div className="flex flex-col gap-6">
             <div className="relative overflow-hidden rounded-none border border-amber/40 bg-amber/10 p-7">
-              <Backdrop src="/img/growth.jpg" side="right" opacity={0.08} />
+              <Backdrop src="/img/growth.jpg" side="right" opacity={0.2} />
               <div className="relative">
                 <p className="mb-2 font-semibold text-amber-deep">ROI 관점으로 생각해보세요</p>
                 <p className="text-[0.98rem] leading-relaxed text-ink">{roi}</p>

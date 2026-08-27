@@ -6,7 +6,7 @@ export default async function Roadmap() {
   const { roadmap } = await getContent();
   return (
     <section id="roadmap" className="relative overflow-hidden border-b border-line bg-paper-dim/40 py-20 sm:py-28">
-      <Backdrop src="/img/ecommerce.jpg" side="right" opacity={0.05} />
+      <Backdrop src="/img/ecommerce.jpg" side="right" opacity={0.16} />
       <div className="relative mx-auto max-w-4xl px-5 sm:px-8">
         <div className="max-w-2xl">
           <SectionMark name="route" tone="amber" />

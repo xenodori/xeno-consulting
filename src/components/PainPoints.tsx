@@ -11,11 +11,11 @@ export default async function PainPoints() {
         src="/img/packages.jpg"
         alt=""
         aria-hidden
-        className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-[0.12] grayscale"
+        className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-[0.28] grayscale"
       />
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 bg-gradient-to-r from-ink via-ink/90 to-ink/60"
+        className="pointer-events-none absolute inset-0 bg-gradient-to-r from-ink via-ink/85 to-ink/50"
       />
       <div className="relative mx-auto max-w-4xl px-5 sm:px-8">
         <SectionMark name="alert" tone="paper" />

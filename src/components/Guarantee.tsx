@@ -11,11 +11,11 @@ export default async function Guarantee() {
         src="/img/analytics.jpg"
         alt=""
         aria-hidden
-        className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-[0.1] grayscale"
+        className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-[0.26] grayscale"
       />
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 bg-gradient-to-l from-ink via-ink/90 to-ink/60"
+        className="pointer-events-none absolute inset-0 bg-gradient-to-l from-ink via-ink/85 to-ink/50"
       />
       <div className="relative mx-auto max-w-5xl px-5 sm:px-8">
         <div className="max-w-2xl">
