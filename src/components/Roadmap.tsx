@@ -1,11 +1,13 @@
 import { getContent } from "@/lib/site-content";
 import { SectionMark } from "./Icons";
+import { Backdrop } from "./Backdrop";
 
 export default async function Roadmap() {
   const { roadmap } = await getContent();
   return (
-    <section id="roadmap" className="border-b border-line bg-paper-dim/40 py-20 sm:py-28">
-      <div className="mx-auto max-w-4xl px-5 sm:px-8">
+    <section id="roadmap" className="relative overflow-hidden border-b border-line bg-paper-dim/40 py-20 sm:py-28">
+      <Backdrop src="/img/ecommerce.jpg" side="right" opacity={0.05} />
+      <div className="relative mx-auto max-w-4xl px-5 sm:px-8">
         <div className="max-w-2xl">
           <SectionMark name="route" tone="amber" />
           <p className="eyebrow mb-4">커리큘럼 · 진행 프로세스</p>
@@ -14,18 +16,7 @@ export default async function Roadmap() {
           </h2>
         </div>
 
-        {/* 마케팅·채널 밴드 이미지 (그레이스케일) */}
-        <figure className="mt-12 overflow-hidden border border-line">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/img/ecommerce.jpg"
-            alt="이커머스 마케팅 채널"
-            loading="lazy"
-            className="h-48 w-full object-cover grayscale sm:h-56"
-          />
-        </figure>
-
-        <ol className="mt-12 relative border-l border-line">
+        <ol className="mt-14 relative border-l border-line">
           {roadmap.map((s, i) => (
             <li key={s.tag} className="relative pb-12 pl-8 last:pb-0">
               <span

@@ -1,11 +1,13 @@
 import { getContent } from "@/lib/site-content";
 import { Icon, SectionMark } from "./Icons";
+import { Backdrop } from "./Backdrop";
 
 export default async function Deliverables() {
   const { deliverables } = await getContent();
   return (
-    <section id="deliverables" className="border-b border-line py-20 sm:py-28">
-      <div className="mx-auto max-w-5xl px-5 sm:px-8">
+    <section id="deliverables" className="relative overflow-hidden border-b border-line py-20 sm:py-28">
+      <Backdrop src="/img/workspace.jpg" side="right" opacity={0.05} />
+      <div className="relative mx-auto max-w-5xl px-5 sm:px-8">
         <div className="max-w-2xl">
           <SectionMark name="package" />
           <p className="eyebrow mb-4">제공 항목</p>
@@ -14,18 +16,7 @@ export default async function Deliverables() {
           </h2>
         </div>
 
-        {/* 워크스페이스 밴드 이미지 (그레이스케일) */}
-        <figure className="mt-12 overflow-hidden border border-line">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/img/workspace.jpg"
-            alt="스토어 운영 워크스페이스"
-            loading="lazy"
-            className="h-52 w-full object-cover grayscale sm:h-64"
-          />
-        </figure>
-
-        <div className="mt-6 grid gap-px overflow-hidden rounded-none border border-line bg-line sm:grid-cols-2">
+        <div className="mt-12 grid gap-px overflow-hidden rounded-none border border-line bg-line sm:grid-cols-2">
           {deliverables.map((d) => (
             <div key={d} className="flex items-start gap-4 bg-paper p-7">
               <Icon name="check" className="mt-0.5 h-5 w-5 shrink-0 text-amber" />
