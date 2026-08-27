@@ -6,7 +6,7 @@ export default async function Deliverables() {
   const { deliverables } = await getContent();
   return (
     <section id="deliverables" className="relative overflow-hidden border-b border-line py-20 sm:py-28">
-      <Backdrop src="/img/workspace.jpg" side="right" opacity={0.16} />
+      <Backdrop src="/img/workspace.jpg" side="right" opacity={0.2} />
       <div className="relative mx-auto max-w-5xl px-5 sm:px-8">
         <div className="max-w-2xl">
           <SectionMark name="package" />
