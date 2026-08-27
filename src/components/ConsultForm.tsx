@@ -28,6 +28,20 @@ export default function ConsultForm() {
     const form = e.currentTarget;
     const data = Object.fromEntries(new FormData(form).entries());
 
+    const required: [string, string][] = [
+      ["name", "이름"],
+      ["email", "이메일"],
+      ["phone", "연락처"],
+      ["store", "스토어 주소"],
+      ["detail", "답답한 점"],
+    ];
+    const missing = required.filter(([k]) => !String(data[k] ?? "").trim());
+    if (missing.length) {
+      setStatus("error");
+      setMessage(`${missing.map(([, l]) => l).join(", ")}을(를) 입력해 주세요.`);
+      return;
+    }
+
     setStatus("sending");
     setMessage("");
     try {
@@ -82,8 +96,8 @@ export default function ConsultForm() {
       </div>
 
       <div className="grid gap-5 sm:grid-cols-2">
-        <Field label="연락처 (선택)" htmlFor="phone">
-          <input id="phone" name="phone" inputMode="tel" autoComplete="tel" className={inputCls} placeholder="010-0000-0000" />
+        <Field label="연락처" htmlFor="phone">
+          <input id="phone" name="phone" required inputMode="tel" autoComplete="tel" className={inputCls} placeholder="010-0000-0000" />
         </Field>
         <Field label="현재 월 매출" htmlFor="revenue">
           <select id="revenue" name="revenue" className={inputCls} defaultValue="">
@@ -94,8 +108,8 @@ export default function ConsultForm() {
       </div>
 
       <div className="grid gap-5 sm:grid-cols-2">
-        <Field label="스토어 주소 (선택)" htmlFor="store">
-          <input id="store" name="store" inputMode="url" className={inputCls} placeholder="smartstore.naver.com/..." />
+        <Field label="스토어 주소" htmlFor="store">
+          <input id="store" name="store" required inputMode="url" className={inputCls} placeholder="smartstore.naver.com/..." />
         </Field>
         <Field label="목표 매출" htmlFor="goal">
           <select id="goal" name="goal" className={inputCls} defaultValue="">

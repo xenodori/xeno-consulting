@@ -24,11 +24,19 @@ export async function POST(req: NextRequest) {
 
   const name = clean(payload.name, 80);
   const email = clean(payload.email, 160);
+  const phone = clean(payload.phone, 40);
+  const store = clean(payload.store, 200);
   const detail = clean(payload.detail);
 
   if (!name || !detail) {
     return NextResponse.json(
       { error: "이름과 문제 내용을 적어주세요." },
+      { status: 422 },
+    );
+  }
+  if (!phone || !store) {
+    return NextResponse.json(
+      { error: "연락처와 스토어 주소를 적어주세요." },
       { status: 422 },
     );
   }
@@ -42,8 +50,8 @@ export async function POST(req: NextRequest) {
   const record = {
     name,
     email,
-    phone: clean(payload.phone, 40),
-    store: clean(payload.store, 200),
+    phone,
+    store,
     revenue: clean(payload.revenue, 40),
     goal: clean(payload.goal, 40),
     package: clean(payload.package, 40),
