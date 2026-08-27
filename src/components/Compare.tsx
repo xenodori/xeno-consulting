@@ -1,4 +1,5 @@
 import { getContent } from "@/lib/site-content";
+import { Icon, SectionMark } from "./Icons";
 
 export default async function Compare() {
   const { compareRows } = await getContent();
@@ -6,6 +7,7 @@ export default async function Compare() {
     <section id="compare" className="border-b border-line py-20 sm:py-28">
       <div className="mx-auto max-w-5xl px-5 sm:px-8">
         <div className="max-w-2xl">
+          <SectionMark name="compare" />
           <p className="eyebrow mb-4">가치 제안</p>
           <h2 className="display text-3xl sm:text-4xl md:text-5xl">
             늘어지는 8주짜리 강의는 그만.
@@ -22,10 +24,16 @@ export default async function Compare() {
               <tr className="border-b border-line">
                 <th className="w-32 py-4 pr-4" />
                 <th className="py-4 pr-4 align-bottom">
-                  <span className="tick">일반 VOD / 단체 코칭</span>
+                  <span className="tick inline-flex items-center gap-2 text-ink-soft">
+                    <Icon name="x" className="h-4 w-4" />
+                    일반 VOD / 단체 코칭
+                  </span>
                 </th>
                 <th className="border-x-2 border-t-2 border-amber bg-ink py-4 px-5 align-bottom text-paper">
-                  <span className="eyebrow text-amber">1:1 VIP 딥다이브</span>
+                  <span className="eyebrow inline-flex items-center gap-2 text-amber">
+                    <Icon name="check" className="h-4 w-4" />
+                    1:1 VIP 딥다이브
+                  </span>
                 </th>
               </tr>
             </thead>

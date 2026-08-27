@@ -1,4 +1,5 @@
 import { PhotoFrame } from "./Media";
+import { Icon } from "./Icons";
 import { getContent } from "@/lib/site-content";
 
 export default async function Hero() {
@@ -72,12 +73,13 @@ export default async function Hero() {
 
         {/* stat strip */}
         <dl className="grid grid-cols-3 border-t border-ink/15 divide-x divide-line">
-          {[
-            ["6시간", "1:1 집중 수술"],
-            ["30일", "실행 밀착 케어"],
-            ["월 3명", "소수 정예 선발"],
-          ].map(([n, l]) => (
+          {([
+            ["6시간", "1:1 집중 수술", "clock"],
+            ["30일", "실행 밀착 케어", "target"],
+            ["월 3명", "소수 정예 선발", "users"],
+          ] as const).map(([n, l, icon]) => (
             <div key={l} className="px-2 py-6 first:pl-0">
+              <Icon name={icon} className="mb-3 h-5 w-5 text-amber" />
               <dt className="display text-3xl sm:text-4xl">{n}</dt>
               <dd className="tick mt-1.5">{l}</dd>
             </div>

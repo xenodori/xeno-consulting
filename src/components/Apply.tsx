@@ -1,10 +1,12 @@
 import ConsultForm from "./ConsultForm";
+import { SectionMark } from "./Icons";
 
 export default function Apply() {
   return (
     <section id="apply" className="py-20 sm:py-28">
       <div className="mx-auto grid max-w-6xl gap-12 px-5 sm:px-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
         <div className="lg:sticky lg:top-28 lg:self-start">
+          <SectionMark name="send" tone="amber" />
           <p className="eyebrow mb-4">사전 지원서</p>
           <h2 className="display text-4xl sm:text-5xl">
             내 스토어에 맞춘

@@ -1,11 +1,13 @@
 import { getContent } from "@/lib/site-content";
 import { PhotoFrame } from "./Media";
+import { Icon, SectionMark } from "./Icons";
 
 export default async function About() {
   const { consultant, timeline, book } = await getContent();
   return (
     <section id="about" className="border-b border-line py-20 sm:py-28">
       <div className="mx-auto max-w-5xl px-5 sm:px-8">
+        <SectionMark name="user" />
         <p className="eyebrow mb-8">컨설턴트 소개</p>
 
         {/* hook headline */}
@@ -33,7 +35,7 @@ export default async function About() {
             <ul className="mt-10 space-y-4 border-t border-line pt-8">
               {consultant.credentials.map((c) => (
                 <li key={c} className="flex gap-4 text-[0.98rem] leading-relaxed">
-                  <span aria-hidden className="mt-2 h-px w-4 shrink-0 bg-amber" />
+                  <Icon name="award" className="mt-0.5 h-5 w-5 shrink-0 text-amber" />
                   <span>{c}</span>
                 </li>
               ))}

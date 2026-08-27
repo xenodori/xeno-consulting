@@ -1,10 +1,12 @@
 import { getContent } from "@/lib/site-content";
+import { SectionMark } from "./Icons";
 
 export default async function Faq() {
   const { faqs } = await getContent();
   return (
     <section id="faq" className="border-b border-line py-20 sm:py-28">
       <div className="mx-auto max-w-3xl px-5 sm:px-8">
+        <SectionMark name="question" />
         <p className="eyebrow mb-4">자주 묻는 질문</p>
         <h2 className="display text-3xl sm:text-4xl md:text-5xl">
           결정 전에, 이건 짚고 가세요

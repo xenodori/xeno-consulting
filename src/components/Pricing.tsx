@@ -1,5 +1,6 @@
 import { getContent } from "@/lib/site-content";
 import { PhotoFrame } from "./Media";
+import { Icon, SectionMark } from "./Icons";
 
 export default async function Pricing() {
   const {
@@ -16,6 +17,7 @@ export default async function Pricing() {
     <section id="pricing" className="border-b border-line py-20 sm:py-28">
       <div className="mx-auto max-w-5xl px-5 sm:px-8">
         <div className="max-w-2xl">
+          <SectionMark name="tag" />
           <p className="eyebrow mb-4">수강료 · 신청 절차</p>
           <h2 className="display text-3xl sm:text-4xl md:text-5xl">
             단 한 번의 정밀 처방
@@ -108,8 +110,9 @@ export default async function Pricing() {
               {bonuses.map((b) => (
                 <div key={b.title} className="border border-amber/50 bg-amber/10 p-5">
                   <div className="flex items-baseline justify-between gap-3">
-                    <span className="text-sm font-semibold text-amber-deep">
-                      ＋ 보너스 · {b.title}
+                    <span className="flex items-center gap-2 text-sm font-semibold text-amber-deep">
+                      <Icon name="gift" className="h-4 w-4" />
+                      보너스 · {b.title}
                     </span>
                     <span className="tick shrink-0 text-ink-soft">
                       <span className="line-through">{b.retail}</span>{" "}

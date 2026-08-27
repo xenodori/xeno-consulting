@@ -1,5 +1,6 @@
 import { getContent } from "@/lib/site-content";
 import { PhotoFrame } from "./Media";
+import { SectionMark } from "./Icons";
 
 export default async function Cases() {
   const { cases, casesClaim } = await getContent();
@@ -7,6 +8,7 @@ export default async function Cases() {
     <section id="cases" className="border-b border-line bg-paper-dim/40 py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <div className="max-w-2xl">
+          <SectionMark name="trending" tone="amber" />
           <p className="eyebrow mb-4">실제 성공 사례</p>
           <h2 className="display text-3xl sm:text-4xl md:text-5xl">
             먼저 병목을 뚫어낸

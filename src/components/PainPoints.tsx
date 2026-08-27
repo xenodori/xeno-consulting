@@ -1,10 +1,12 @@
 import { getContent } from "@/lib/site-content";
+import { Icon, SectionMark } from "./Icons";
 
 export default async function PainPoints() {
   const { pain } = await getContent();
   return (
     <section id="pain" className="border-b border-line bg-ink py-20 text-paper sm:py-28">
       <div className="mx-auto max-w-4xl px-5 sm:px-8">
+        <SectionMark name="alert" tone="paper" />
         <p className="eyebrow mb-6 text-amber">문제 제기</p>
         <h2 className="display whitespace-pre-line text-3xl leading-tight sm:text-4xl md:text-5xl">
           {pain.headline}
@@ -13,7 +15,7 @@ export default async function PainPoints() {
         <ul className="mt-12 flex flex-col divide-y divide-paper/10 border-y border-paper/10">
           {pain.points.map((p) => (
             <li key={p} className="flex gap-5 py-5">
-              <span aria-hidden className="mt-3 h-px w-6 shrink-0 bg-amber" />
+              <Icon name="x" className="mt-1 h-5 w-5 shrink-0 text-amber" />
               <span className="text-lg leading-relaxed text-paper/85">{p}</span>
             </li>
           ))}

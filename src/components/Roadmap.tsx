@@ -1,4 +1,5 @@
 import { getContent } from "@/lib/site-content";
+import { SectionMark } from "./Icons";
 
 export default async function Roadmap() {
   const { roadmap } = await getContent();
@@ -6,6 +7,7 @@ export default async function Roadmap() {
     <section id="roadmap" className="border-b border-line bg-paper-dim/40 py-20 sm:py-28">
       <div className="mx-auto max-w-4xl px-5 sm:px-8">
         <div className="max-w-2xl">
+          <SectionMark name="route" tone="amber" />
           <p className="eyebrow mb-4">커리큘럼 · 진행 프로세스</p>
           <h2 className="display text-3xl sm:text-4xl md:text-5xl">
             사전 진단부터 30일 사후 케어까지
