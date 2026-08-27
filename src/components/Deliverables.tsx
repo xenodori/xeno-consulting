@@ -14,7 +14,18 @@ export default async function Deliverables() {
           </h2>
         </div>
 
-        <div className="mt-12 grid gap-px overflow-hidden rounded-none border border-line bg-line sm:grid-cols-2">
+        {/* 워크스페이스 밴드 이미지 (그레이스케일) */}
+        <figure className="mt-12 overflow-hidden border border-line">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/img/workspace.jpg"
+            alt="스토어 운영 워크스페이스"
+            loading="lazy"
+            className="h-52 w-full object-cover grayscale sm:h-64"
+          />
+        </figure>
+
+        <div className="mt-6 grid gap-px overflow-hidden rounded-none border border-line bg-line sm:grid-cols-2">
           {deliverables.map((d) => (
             <div key={d} className="flex items-start gap-4 bg-paper p-7">
               <Icon name="check" className="mt-0.5 h-5 w-5 shrink-0 text-amber" />

@@ -14,7 +14,18 @@ export default async function Roadmap() {
           </h2>
         </div>
 
-        <ol className="mt-14 relative border-l border-line">
+        {/* 마케팅·채널 밴드 이미지 (그레이스케일) */}
+        <figure className="mt-12 overflow-hidden border border-line">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/img/ecommerce.jpg"
+            alt="이커머스 마케팅 채널"
+            loading="lazy"
+            className="h-48 w-full object-cover grayscale sm:h-56"
+          />
+        </figure>
+
+        <ol className="mt-12 relative border-l border-line">
           {roadmap.map((s, i) => (
             <li key={s.tag} className="relative pb-12 pl-8 last:pb-0">
               <span

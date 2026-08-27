@@ -4,8 +4,20 @@ import { Icon, SectionMark } from "./Icons";
 export default async function Guarantee() {
   const { guarantee } = await getContent();
   return (
-    <section id="guarantee" className="border-b border-line bg-ink py-20 text-paper sm:py-28">
-      <div className="mx-auto max-w-5xl px-5 sm:px-8">
+    <section id="guarantee" className="relative overflow-hidden border-b border-line bg-ink py-20 text-paper sm:py-28">
+      {/* 배경 이미지 — 성과 대시보드 (그레이스케일 + 잉크 오버레이) */}
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src="/img/analytics.jpg"
+        alt=""
+        aria-hidden
+        className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-[0.1] grayscale"
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 bg-gradient-to-l from-ink via-ink/90 to-ink/60"
+      />
+      <div className="relative mx-auto max-w-5xl px-5 sm:px-8">
         <div className="max-w-2xl">
           <SectionMark name="shield" tone="paper" />
           <p className="eyebrow mb-4 text-amber">리스크 리버설</p>
