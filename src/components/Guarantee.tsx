@@ -34,8 +34,6 @@ export default async function Guarantee() {
             </div>
           ))}
         </div>
-
-        <p className="tick mt-6 text-paper/40">{guarantee.note}</p>
       </div>
     </section>
   );
