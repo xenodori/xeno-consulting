@@ -44,40 +44,52 @@ export default async function About() {
 
           {/* timeline + 저서 */}
           <div>
-            {/* 저서 — 권위 증거 */}
-            <figure className="mb-12 flex items-center gap-5 border-b border-line pb-10">
-              <PhotoFrame
-                src={book.image}
-                alt={book.title}
-                hint={book.hint}
-                className="aspect-[3/4] w-28 shrink-0 rounded-none border-ink/15"
-              />
-              <figcaption>
-                <p className="eyebrow mb-2">저서</p>
-                <p className="text-[0.95rem] font-semibold leading-snug text-ink">
+            {/* 저서 — 권위 증거 (입체 카드) */}
+            <figure className="mb-14 flex items-start gap-6 border border-line bg-paper-dim/50 p-6">
+              <div className="shrink-0 shadow-[0_20px_44px_-16px_rgba(23,20,15,0.5)]">
+                <PhotoFrame
+                  src={book.image}
+                  alt={book.title}
+                  hint={book.hint}
+                  className="aspect-[3/4] w-28 rounded-none border-ink/10"
+                />
+              </div>
+              <figcaption className="pt-1">
+                <p className="eyebrow mb-2 text-amber-deep">저서 · 개정판 출간</p>
+                <p className="text-[1.02rem] font-semibold leading-snug text-ink">
                   {book.title}
                 </p>
-                <p className="tick mt-1.5">{book.author}</p>
+                <p className="tick mt-2">{book.author}</p>
+                <p className="mt-3 text-sm leading-relaxed text-ink-soft">
+                  현장에서 검증한 해외구매대행 실전을 한 권에 담았습니다.
+                </p>
               </figcaption>
             </figure>
 
-            <p className="eyebrow mb-7">지나온 길</p>
-            <ol className="space-y-6">
+            {/* 연혁 — 세로 타임라인 */}
+            <div className="flex items-center gap-3">
+              <Icon name="route" className="h-5 w-5 text-amber" />
+              <p className="eyebrow">지나온 길</p>
+            </div>
+            <ol className="relative mt-8 border-l border-line">
               {timeline.map((t) => (
-                <li
-                  key={t.period}
-                  className="grid grid-cols-[5.5rem_1fr] gap-4 border-b border-line pb-5 last:border-0"
-                >
-                  <span className="tick pt-1">{t.period}</span>
+                <li key={t.period} className="relative pb-8 pl-8 last:pb-0">
                   <span
+                    aria-hidden
+                    className={`absolute -left-[7px] top-1.5 h-3.5 w-3.5 rounded-full border-2 ${
+                      t.highlight ? "border-amber bg-amber" : "border-ink bg-paper"
+                    }`}
+                  />
+                  <p className="tick">{t.period}</p>
+                  <p
                     className={
                       t.highlight
-                        ? "display text-lg text-amber"
-                        : "text-[0.95rem] leading-snug text-ink"
+                        ? "mt-1 display text-xl leading-snug text-amber-deep"
+                        : "mt-1 text-[0.98rem] leading-snug text-ink"
                     }
                   >
                     {t.text}
-                  </span>
+                  </p>
                 </li>
               ))}
             </ol>
