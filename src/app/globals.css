@@ -13,6 +13,8 @@
   /* single accent — deep oxblood, used sparingly */
   --color-amber: #7a2e28;
   --color-amber-deep: #5c201b;
+  /* 어두운 배경 위 강조용 — 밝은 앰버(같은 웜 계열) */
+  --color-amber-lit: #d68a57;
   --color-pine: #17140f;
   --color-pine-soft: #e6e0d2;
 

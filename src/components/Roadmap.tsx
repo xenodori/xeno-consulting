@@ -1,6 +1,7 @@
 import { getContent } from "@/lib/site-content";
 import { SectionMark } from "./Icons";
 import { Backdrop } from "./Backdrop";
+import { Quoted } from "./Quoted";
 
 export default async function Roadmap() {
   const { roadmap } = await getContent();
@@ -34,7 +35,7 @@ export default async function Roadmap() {
                 {s.points.map((p) => (
                   <li key={p} className="flex gap-3 text-[0.98rem] leading-relaxed text-ink-soft">
                     <span aria-hidden className="mt-1 text-amber">▹</span>
-                    <span>{p}</span>
+                    <span><Quoted text={p} /></span>
                   </li>
                 ))}
               </ul>

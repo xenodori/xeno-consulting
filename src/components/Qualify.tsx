@@ -1,5 +1,6 @@
 import { getContent } from "@/lib/site-content";
 import { Icon, SectionMark } from "./Icons";
+import { Quoted } from "./Quoted";
 
 export default async function Qualify() {
   const { qualify } = await getContent();
@@ -24,7 +25,7 @@ export default async function Qualify() {
               {qualify.no.map((t) => (
                 <li key={t} className="flex gap-4 text-[0.98rem] leading-relaxed text-ink-soft">
                   <Icon name="x" className="mt-0.5 h-5 w-5 shrink-0 text-ink-soft/50" />
-                  <span className="line-through decoration-ink-soft/30">{t}</span>
+                  <span className="line-through decoration-ink-soft/30"><Quoted text={t} /></span>
                 </li>
               ))}
             </ul>

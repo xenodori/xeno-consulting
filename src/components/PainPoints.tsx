@@ -1,5 +1,6 @@
 import { getContent } from "@/lib/site-content";
 import { Icon, SectionMark } from "./Icons";
+import { Quoted } from "./Quoted";
 
 export default async function PainPoints() {
   const { pain } = await getContent();
@@ -33,10 +34,10 @@ export default async function PainPoints() {
           ))}
         </ul>
 
-        <div className="mt-12 border-l-2 border-amber pl-6">
+        <div className="mt-12 border-l-2 border-amber-lit pl-6">
           <p className="text-lg text-paper/70">{pain.punchLead}</p>
           <p className="display mt-2 text-2xl leading-snug sm:text-3xl">
-            {pain.punch}
+            <Quoted text={pain.punch} tone="dark" />
           </p>
         </div>
       </div>

@@ -1,4 +1,5 @@
 import { getContent } from "@/lib/site-content";
+import { Quoted } from "./Quoted";
 import { Icon, SectionMark } from "./Icons";
 
 export default async function Compare() {
@@ -51,7 +52,7 @@ export default async function Compare() {
                       i === compareRows.length - 1 ? "border-b-2" : ""
                     }`}
                   >
-                    {r.vip}
+                    <Quoted text={r.vip} tone="dark" />
                   </td>
                 </tr>
               ))}
