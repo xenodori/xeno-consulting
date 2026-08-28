@@ -142,7 +142,7 @@ export default function ConsultForm() {
 }
 
 const inputCls =
-  "w-full rounded-none border border-line bg-paper px-4 py-3 text-ink placeholder:text-ink-soft/50 outline-none transition-colors focus:border-ink";
+  "w-full rounded-none border border-line bg-paper px-4 py-3 text-ink placeholder:text-ink-soft/50 outline-none transition-all focus:border-amber focus:ring-2 focus:ring-amber/20";
 
 function Field({
   label,

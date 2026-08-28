@@ -28,12 +28,18 @@ export default async function Cases() {
                 <span className="tick border-b border-amber pb-1 text-amber-deep">{c.tag}</span>
                 <h3 className="display mt-5 text-2xl leading-snug sm:text-3xl">{c.headline}</h3>
 
-                {/* 지표 */}
-                <dl className="mt-7 grid grid-cols-3 gap-3 border-y border-line py-5">
-                  {c.metrics.map((m) => (
-                    <div key={m.label}>
-                      <dt className="display text-xl text-pine sm:text-2xl">{m.value}</dt>
-                      <dd className="tick mt-1">{m.label}</dd>
+                {/* 지표 — 베토(격자) 카드 */}
+                <dl className="mt-7 grid grid-cols-3 gap-px overflow-hidden border border-line bg-line">
+                  {c.metrics.map((m, mi) => (
+                    <div key={m.label} className="bg-paper px-4 py-5">
+                      <dt
+                        className={`display text-2xl leading-none sm:text-3xl ${
+                          mi === 0 ? "text-amber-deep" : "text-ink"
+                        }`}
+                      >
+                        {m.value}
+                      </dt>
+                      <dd className="tick mt-2">{m.label}</dd>
                     </div>
                   ))}
                 </dl>
