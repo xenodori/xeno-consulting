@@ -5,7 +5,7 @@ import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
 import { createHash } from "node:crypto";
 import { defaults } from "@/lib/content";
-import { saveContent } from "@/lib/site-content";
+import { saveContent, resetContent } from "@/lib/site-content";
 
 const COOKIE = "xeno_admin";
 
@@ -67,4 +67,15 @@ export async function save(formData: FormData): Promise<void> {
   }
   revalidatePath("/");
   redirect("/admin?ok=1");
+}
+
+export async function reset(): Promise<void> {
+  if (!(await isAuthed())) redirect("/admin?e=auth");
+  try {
+    await resetContent();
+  } catch {
+    redirect("/admin?e=save");
+  }
+  revalidatePath("/");
+  redirect("/admin?ok=reset");
 }

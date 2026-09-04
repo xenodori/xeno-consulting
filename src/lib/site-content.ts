@@ -36,15 +36,29 @@ export const getContent = cache(async (): Promise<SiteContent> => {
   }
 });
 
-/** 관리자 저장 */
+/** 관리자 저장 — 기본값과 다른 항목만 저장(sparse)해서, 코드 기본값 변경이 반영되도록 한다. */
 export async function saveContent(data: SiteContent): Promise<void> {
   if (!DB_URL) throw new Error("DATABASE_URL 이 설정되어 있지 않습니다.");
+  const sparse: Record<string, unknown> = {};
+  for (const key of Object.keys(defaults) as (keyof SiteContent)[]) {
+    if (JSON.stringify(data[key]) !== JSON.stringify(defaults[key])) {
+      sparse[key] = data[key];
+    }
+  }
   const sql = neon(DB_URL);
   await sql.query(CREATE_TABLE);
   await sql.query(
     `INSERT INTO site_content (id, data, updated_at)
      VALUES (1, $1::jsonb, now())
      ON CONFLICT (id) DO UPDATE SET data = EXCLUDED.data, updated_at = now()`,
-    [JSON.stringify(data)],
+    [JSON.stringify(sparse)],
   );
+}
+
+/** DB 저장값을 지워 코드 기본값으로 되돌린다. */
+export async function resetContent(): Promise<void> {
+  if (!DB_URL) return;
+  const sql = neon(DB_URL);
+  await sql.query(CREATE_TABLE);
+  await sql.query("DELETE FROM site_content WHERE id = 1");
 }

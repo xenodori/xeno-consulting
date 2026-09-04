@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { defaults } from "@/lib/content";
 import { getContent } from "@/lib/site-content";
-import { isAuthed, login, logout, save } from "./actions";
+import { isAuthed, login, logout, save, reset } from "./actions";
 
 export const dynamic = "force-dynamic";
 export const metadata: Metadata = { title: "관리자", robots: { index: false } };
@@ -74,14 +74,24 @@ export default async function AdminPage({
     <main className="mx-auto max-w-3xl px-5 py-10">
       <div className="flex items-center justify-between">
         <h1 className="text-xl font-semibold text-neutral-900">사이트 내용 편집</h1>
-        <form action={logout}>
-          <button className="text-sm text-neutral-500 underline">로그아웃</button>
-        </form>
+        <div className="flex items-center gap-4">
+          <form action={reset}>
+            <button className="text-sm text-neutral-500 underline">코드 기본값으로 초기화</button>
+          </form>
+          <form action={logout}>
+            <button className="text-sm text-neutral-500 underline">로그아웃</button>
+          </form>
+        </div>
       </div>
 
       {sp.ok === "1" && (
         <p className="mt-4 rounded-md bg-green-50 px-4 py-3 text-sm text-green-700">
           저장되었습니다. 홈페이지에 반영됐어요. (새로고침으로 확인)
+        </p>
+      )}
+      {sp.ok === "reset" && (
+        <p className="mt-4 rounded-md bg-green-50 px-4 py-3 text-sm text-green-700">
+          저장값을 지우고 코드 기본값으로 되돌렸습니다. 홈페이지가 최신 콘텐츠로 표시됩니다.
         </p>
       )}
       {sp.e === "json" && (
